@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina — Intelligent Study Workspace</title>
+    <meta name="description"
+        content="Lumina is a premium digital study workspace for students — notes, flashcards, timers, AI assistant, and more.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Ambient Background Gradient Orbs -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon"><i data-lucide="sparkles"></i></div>
+                <span class="brand-text">Lumina</span>
+                <span class="brand-badge">PRO</span>
+            </div>
+
+            <div class="nav-section-label">WORKSPACE</div>
+            <nav class="nav-list" id="nav-list">
+                <a href="#" class="nav-link active" data-section="dashboard">
+                    <i data-lucide="layout-dashboard"></i><span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-link" data-section="notes">
+                    <i data-lucide="file-text"></i><span>Notes</span>
+                </a>
+                <a href="#" class="nav-link" data-section="planner">
+                    <i data-lucide="list-checks"></i><span>Study Planner</span>
+                </a>
+                <a href="#" class="nav-link" data-section="timer">
+                    <i data-lucide="clock"></i><span>Focus Timer</span>
+                </a>
+                <a href="#" class="nav-link" data-section="flashcards">
+                    <i data-lucide="layers"></i><span>Flashcards</span>
+                </a>
+                <a href="#" class="nav-link" data-section="quiz">
+                    <i data-lucide="trophy"></i><span>Quiz</span>
+                </a>
+            </nav>
+
+            <div class="nav-section-label">RESOURCES</div>
+            <nav class="nav-list">
+                <a href="#" class="nav-link" data-section="formulas">
+                    <i data-lucide="sigma"></i><span>Formulas</span>
+                </a>
+                <a href="#" class="nav-link" data-section="files">
+                    <i data-lucide="folder-open"></i><span>Materials</span>
+                </a>
+                <a href="#" class="nav-link" data-section="calendar">
+                    <i data-lucide="calendar-days"></i><span>Calendar</span>
+                </a>
+            </nav>
+
+            <div class="nav-section-label">INTELLIGENCE</div>
+            <nav class="nav-list">
+                <a href="#" class="nav-link" data-section="ai">
+                    <i data-lucide="bot"></i><span>Lumina AI</span>
+                    <span class="nav-badge">NEW</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="sidebar-footer-btn">
+                    <i data-lucide="moon" id="theme-icon"></i>
+                    <span id="theme-label">Dark Mode</span>
+                </button>
+                <button id="profile-btn" class="sidebar-footer-btn">
+                    <div class="avatar">S</div>
+                    <span>Student</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main" id="main">
+            <header class="topbar">
+                <button class="menu-toggle" id="menu-toggle"><i data-lucide="panel-left"></i></button>
+                <div class="topbar-search">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="global-search" placeholder="Search anything…" autocomplete="off">
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-quote" id="quote-banner">
+                        <i data-lucide="quote"></i>
+                        <span id="quote-text">The secret of getting ahead is getting started.</span>
+                    </div>
+                </div>
+            </header>
+
+            <section id="content-area" class="content-area"></section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-box" id="modal-box"></div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
